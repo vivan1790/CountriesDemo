@@ -32,6 +32,7 @@ def retrofitVersion = '2.8.1'
 def lifecycleVersion = '2.2.0'
 def butterKnifeVersion = '10.2.1'
 def picassoVersion = '2.71828'
+def daggerVersion = '2.27'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -60,6 +61,11 @@ dependencies {
 
     // Picasso
     implementation "com.squareup.picasso:picasso:$picassoVersion"
+
+    //Dagger
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    implementation "com.google.dagger:dagger-android:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
 
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
