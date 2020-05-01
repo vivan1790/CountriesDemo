@@ -31,6 +31,7 @@ android {
 def retrofitVersion = '2.8.1'
 def lifecycleVersion = '2.2.0'
 def butterKnifeVersion = '10.2.1'
+def picassoVersion = '2.71828'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -56,6 +57,9 @@ dependencies {
     //noinspection AnnotationProcessorOnCompilePath
     implementation "com.jakewharton:butterknife:$butterKnifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
+
+    // Picasso
+    implementation "com.squareup.picasso:picasso:$picassoVersion"
 
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
