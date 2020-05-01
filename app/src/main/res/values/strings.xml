@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">World Countries</string>
+    <string name="error_loading">Error while loading countries list</string>
 </resources>
