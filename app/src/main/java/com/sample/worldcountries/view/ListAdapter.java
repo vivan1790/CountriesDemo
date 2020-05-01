@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.sample.worldcountries.R;
 import com.sample.worldcountries.model.Country;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,6 +55,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.CountryItemVie
         holder.countryName.setText(countryItem.getCountryName());
         holder.countryCapital.setText(countryItem.getCountryCapital());
         String iso = countryItem.getCountryIsoCode().toLowerCase();
+        Picasso.get()
+                .load("https://flagpedia.net/data/flags/w580/" + iso + ".png")
+                .into(holder.countryFlag);
     }
 
     @Override
