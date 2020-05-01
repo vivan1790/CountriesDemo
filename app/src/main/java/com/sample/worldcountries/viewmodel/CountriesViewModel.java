@@ -3,6 +3,7 @@ package com.sample.worldcountries.viewmodel;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.sample.worldcountries.di.DaggerNetworkComponent;
 import com.sample.worldcountries.model.Country;
 import com.sample.worldcountries.networking.CountriesService;
 
@@ -22,6 +23,10 @@ public class CountriesViewModel extends ViewModel {
 
     @Inject
     CountriesService countriesService;
+
+    public CountriesViewModel() {
+        DaggerNetworkComponent.create().inject(this);
+    }
 
     public void refreshList() {
         countriesService.fetchCountries().enqueue(new Callback<List<Country>>() {
