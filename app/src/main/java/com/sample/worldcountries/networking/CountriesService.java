@@ -18,7 +18,7 @@ public class CountriesService {
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        retrofit.create(CountriesApi.class);
+        countriesApi = retrofit.create(CountriesApi.class);
     }
 
     public Call<List<Country>> fetchCountries() {
