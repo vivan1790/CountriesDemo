@@ -4,21 +4,18 @@ import com.sample.worldcountries.model.Country;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import retrofit2.Call;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CountriesService {
 
-    private final String BASE_URL = "https://restcountries.eu/rest/v2/";
+    @Inject
     CountriesApi countriesApi;
 
+    @Inject
     public CountriesService() {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        countriesApi = retrofit.create(CountriesApi.class);
+        // CountriesService will be instantiated through Dagger Dependency Injection
     }
 
     public Call<List<Country>> fetchCountries() {

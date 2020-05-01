@@ -9,6 +9,8 @@ import com.sample.worldcountries.networking.CountriesService;
 import java.util.List;
 
 
+import javax.inject.Inject;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -18,7 +20,8 @@ public class CountriesViewModel extends ViewModel {
     private MutableLiveData<List<Country>> countriesLiveData = new MutableLiveData<>();
     private MutableLiveData<Boolean> loadingErrorLiveData = new MutableLiveData<>();
 
-    CountriesService countriesService = new CountriesService();
+    @Inject
+    CountriesService countriesService;
 
     public void refreshList() {
         countriesService.fetchCountries().enqueue(new Callback<List<Country>>() {
