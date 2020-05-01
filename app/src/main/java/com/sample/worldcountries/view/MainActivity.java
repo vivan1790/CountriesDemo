@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.progressBar) ProgressBar progressBar;
 
     private CountriesViewModel listViewModel;
+    private ListAdapter listAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,5 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         countriesList.setLayoutManager(new LinearLayoutManager(this));
+        listAdapter = new ListAdapter();
+        countriesList.setAdapter(listAdapter);
     }
 }
