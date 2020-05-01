@@ -37,6 +37,12 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
 
+    // CardView
+    implementation "androidx.cardview:cardview:1.0.0"
+
+    // RecyclerView
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
